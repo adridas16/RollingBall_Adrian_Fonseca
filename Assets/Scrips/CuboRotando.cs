@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CuboRotando : MonoBehaviour
 {
-    [SerializeField] float velocidad = 3;
+    [SerializeField] float velocidad = 1;
     [SerializeField] float velocidadR = 3;
     [SerializeField] float timer = 0f;
     [SerializeField] Vector3 arriba;
@@ -23,7 +23,7 @@ public class CuboRotando : MonoBehaviour
         transform.Rotate(rot* velocidadR * Time.deltaTime,Space.World);
         
        
-        if (timer >= 4)
+        if (timer >= 1.5f)
         {
             velocidad = -velocidad;
             timer = 0;
