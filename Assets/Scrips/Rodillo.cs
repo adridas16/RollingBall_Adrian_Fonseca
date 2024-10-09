@@ -1,0 +1,29 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Rodillo : MonoBehaviour
+{
+    Rigidbody rb;
+    int velocidad = 100;
+    [SerializeField] Vector3 direccionR;
+    // Start is called before the first frame update
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+        
+        //rb.AddTorque(new Vector3(0, 200, 0).normalized * 200f, ForceMode.Impulse);
+    }
+
+    // Update is called once per frame
+    
+    private void FixedUpdate()
+    {
+
+        rb.AddTorque(direccionR * 100, ForceMode.VelocityChange);
+        //transform.Translate(direccion * velocidad * Time.deltaTime, Space.World);
+
+
+
+    }
+}
