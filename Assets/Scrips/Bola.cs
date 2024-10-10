@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -6,6 +7,7 @@ using UnityEngine;
 
 public class Bola : MonoBehaviour
 {
+    [SerializeField] float DeteccionSuelo = 0.17f;
     Vector3 direccion;
     float velocidad=1;
     Rigidbody rb;
@@ -13,6 +15,9 @@ public class Bola : MonoBehaviour
     [SerializeField] int vidas = 100;
     private int puntuacion;
     [SerializeField] TMP_Text textoPuntuacion;
+    [SerializeField] GameObject virtualCamArriba;
+    [SerializeField] GameObject virtualCamdetras;
+    [SerializeField] LayerMask queEsSuelo;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,14 +34,13 @@ public class Bola : MonoBehaviour
         direccion.z= v;
         salto();
 
-        
-
-
         //transform.Translate(direccion * velocidad * Time.deltaTime, Space.World);
-
-
-
-
+        
+    }
+    bool DetectarSuelo()
+    {
+        bool Detector = Physics.Raycast(transform.position, new Vector3(0, -1, 0), DeteccionSuelo, queEsSuelo);
+        return Detector;
     }
     private void FixedUpdate()
     {
@@ -49,10 +53,11 @@ public class Bola : MonoBehaviour
     }
     void salto()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space)&& DetectarSuelo() == true)
         {
+            
+            rb.AddForce(new Vector3(0, 1, 0).normalized * 4f, ForceMode.Impulse);
 
-            rb.AddForce(new Vector3(0, 1, 0).normalized * 2f, ForceMode.Impulse);
         }
     }
     private void OnTriggerEnter(Collider other)
@@ -65,8 +70,21 @@ public class Bola : MonoBehaviour
             Destroy(other.gameObject);
             
         }
+        if(other.gameObject.CompareTag("Cambiocam"))
+        {
+            virtualCamArriba.SetActive(true);
+            virtualCamdetras.SetActive(false);
+        }
         
 
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Cambiocam"))
+        {
+            virtualCamArriba.SetActive(false);
+            virtualCamdetras.SetActive(true);
+        }
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -80,5 +98,5 @@ public class Bola : MonoBehaviour
             }
         }
     }
-    
+   
 }
