@@ -7,9 +7,10 @@ using UnityEngine;
 
 public class Bola : MonoBehaviour
 {
+    [SerializeField]AudioClip ColeccionableS;
+    [SerializeField]AudioManager managerS;
     [SerializeField] float DeteccionSuelo = 0.17f;
     Vector3 direccion;
-    float velocidad=1;
     Rigidbody rb;
     private float h, v;
     [SerializeField] int vidas = 100;
@@ -65,6 +66,7 @@ public class Bola : MonoBehaviour
 
         if (other.gameObject.CompareTag("Coleccionable"))
         {
+            managerS.ReproducirSonido(ColeccionableS);
             puntuacion++;
             textoPuntuacion.SetText("Score: "+ puntuacion);
             Destroy(other.gameObject);
