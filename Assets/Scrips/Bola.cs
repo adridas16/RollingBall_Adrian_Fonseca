@@ -7,6 +7,7 @@ using UnityEngine;
 
 public class Bola : MonoBehaviour
 {
+    
     [SerializeField]AudioClip ColeccionableS;
     [SerializeField]AudioManager managerS;
     [SerializeField] float DeteccionSuelo = 0.17f;
@@ -87,6 +88,13 @@ public class Bola : MonoBehaviour
             virtualCamArriba.SetActive(false);
             virtualCamdetras.SetActive(true);
         }
+        if (other.gameObject.CompareTag("Muerte"))
+        {
+
+            transform.position = new Vector3(-10.96f, 4.28999996f, -0.90200001f);
+
+
+        }
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -99,6 +107,8 @@ public class Bola : MonoBehaviour
 
             }
         }
+       
+        
     }
    
 }
