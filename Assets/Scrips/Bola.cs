@@ -58,7 +58,7 @@ public class Bola : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space)&& DetectarSuelo() == true)
         {
             
-            rb.AddForce(new Vector3(0, 1, 0).normalized * 4f, ForceMode.Impulse);
+            rb.AddForce(new Vector3(0, 1, 0).normalized * 3f, ForceMode.Impulse);  
 
         }
     }
@@ -91,24 +91,11 @@ public class Bola : MonoBehaviour
         if (other.gameObject.CompareTag("Muerte"))
         {
 
-            transform.position = new Vector3(-10.96f, 4.28999996f, -0.90200001f);
+            transform.position = new Vector3(-1.71000004f, 4.28999996f, -2.67600012f);
 
 
         }
     }
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Rodillo"))
-        {
-            vidas -= 10;
-            if (vidas <= 0)
-            {
-                Destroy(gameObject);
-
-            }
-        }
-       
-        
-    }
+    
    
 }
