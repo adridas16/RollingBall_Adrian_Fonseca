@@ -20,5 +20,6 @@ public class AudioManager : MonoBehaviour
     public void ReproducirSonido(AudioClip ColeccionableS)
     {
        SFX.PlayOneShot(ColeccionableS);
+        
     }
 }

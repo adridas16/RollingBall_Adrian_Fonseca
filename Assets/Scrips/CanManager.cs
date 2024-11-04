@@ -15,4 +15,12 @@ public class CanManager : MonoBehaviour
         Application.Quit();
         Debug.Log("Salir");
     }
+    public void Menu()
+    {
+        SceneManager.LoadScene(0);
+    }
+    public void Respawn()
+    {
+        SceneManager.LoadScene(1);
+    }
 }

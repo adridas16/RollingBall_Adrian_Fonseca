@@ -8,6 +8,8 @@ TagManager:
   - Rodillo
   - Cambiocam
   - Muerte
+  - Pinchos
+  - SaltoPared
   layers:
   - Default
   - TransparentFX

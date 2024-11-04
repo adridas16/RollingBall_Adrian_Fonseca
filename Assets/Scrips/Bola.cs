@@ -20,10 +20,15 @@ public class Bola : MonoBehaviour
     [SerializeField] GameObject virtualCamArriba;
     [SerializeField] GameObject virtualCamdetras;
     [SerializeField] LayerMask queEsSuelo;
+    [SerializeField] private float FuerzaSalto=15f ;
+    private int SaltoPared=1;
+    [SerializeField] GameObject CanvasMuerte;
+    [SerializeField] GameObject AudioM;
     // Start is called before the first frame update
     void Start()
     {
-         rb = GetComponent<Rigidbody>();
+        
+        rb = GetComponent<Rigidbody>();
         
     }
 
@@ -35,6 +40,7 @@ public class Bola : MonoBehaviour
         direccion.x=h;
         direccion.z= v;
         salto();
+        Muerte();
 
         //transform.Translate(direccion * velocidad * Time.deltaTime, Space.World);
         
@@ -58,8 +64,8 @@ public class Bola : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space)&& DetectarSuelo() == true)
         {
             
-            rb.AddForce(new Vector3(0, 1, 0).normalized * 3f, ForceMode.Impulse);  
-
+            rb.AddForce(new Vector3(0, 1, 0).normalized * FuerzaSalto, ForceMode.Impulse);  
+            
         }
     }
     private void OnTriggerEnter(Collider other)
@@ -90,12 +96,39 @@ public class Bola : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Muerte"))
         {
-
-            transform.position = new Vector3(-1.71000004f, 4.28999996f, -2.67600012f);
-
+            vidas = 0;
 
         }
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Pinchos")
+        {
+            vidas = 0;
+        }
+        if (collision.gameObject.tag == "SaltoPared")
+        {
+            SaltoPared = 1;
+            if (SaltoPared == 1)
+            {
+                FuerzaSalto = 10f;
+                rb.AddForce(new Vector3(0, 1, 0).normalized * FuerzaSalto, ForceMode.Impulse);               
+                FuerzaSalto = 4.5f;
+
+            }
+           
+        }
+
+    }
     
-   
+    
+    void Muerte()
+    {
+        if(vidas <= 0)
+        {
+            AudioM.SetActive(false);
+            CanvasMuerte.SetActive(true);
+            rb.constraints = RigidbodyConstraints.FreezeAll;
+        }
+    }
 }

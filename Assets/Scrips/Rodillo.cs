@@ -5,7 +5,6 @@ using UnityEngine;
 public class Rodillo : MonoBehaviour
 {
     Rigidbody rb;
-    
     [SerializeField] Vector3 direccionR;
     // Start is called before the first frame update
     void Start()
