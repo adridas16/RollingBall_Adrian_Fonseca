@@ -6,7 +6,7 @@ using UnityEngine;
 public class MuroRompible : MonoBehaviour
 {
     [SerializeField] private Rigidbody[] rbs;
-    private float timer = 0f;
+    private float timer = 1f;
     private bool iniciarTimer = false;
     // Start is called before the first frame update
     void Start()
@@ -17,13 +17,15 @@ public class MuroRompible : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (iniciarTimer)
+        if (iniciarTimer==true)
         {
+            
             timer += 1 * Time.unscaledDeltaTime;
             if (timer >= 2f)
             {
+                
                 Time.timeScale = 1f;
-                for (int i = 0; i < 112; i++) 
+                for (int i = 0; i < 35; i++) 
                 {
                     rbs[i].useGravity = true;
                 }
@@ -36,8 +38,10 @@ public class MuroRompible : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Time.timeScale = 0.25f;
             iniciarTimer = true;
+            Time.timeScale = 0.25f;
+           
+
         }
     }
 }

@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 public class plataformaMovimiento : MonoBehaviour
 {
     [SerializeField]   float velocidad=3;
-    [SerializeField] float timer = 0f;
+    [SerializeField] float timer = 0.5f;
     [SerializeField] Vector3 Direccion=new Vector3 (3,0,0);
    
     // Start is called before the first frame update
@@ -20,7 +20,7 @@ public class plataformaMovimiento : MonoBehaviour
     {
         transform.Translate(Direccion * velocidad * Time.deltaTime);
         timer += 1 * Time.deltaTime;
-        if (timer >= 4)
+        if (timer >= 0.5)
         {
             velocidad= -velocidad;
             timer = 0;
