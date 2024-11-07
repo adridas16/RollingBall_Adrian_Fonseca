@@ -26,6 +26,8 @@ public class Bola : MonoBehaviour
     private int SaltoPared=1;
     [SerializeField] GameObject CanvasMuerte;
     [SerializeField] GameObject AudioM;
+    [SerializeField] int DesbloquearNivel;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -101,6 +103,7 @@ public class Bola : MonoBehaviour
             vidas = 0;
 
         }
+        
     }
     private void OnCollisionEnter(Collision collision)
     {

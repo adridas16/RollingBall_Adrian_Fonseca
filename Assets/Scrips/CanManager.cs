@@ -6,6 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class CanManager : MonoBehaviour
 {
+   
+    private void Start()
+    {
+        
+    }
     public void EmpezarPartida()
     {
         SceneManager.LoadScene(1);
@@ -23,4 +28,17 @@ public class CanManager : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
+    //public void botonSelectLevel()
+    //{
+    //    SceneManager.LoadScene(1);
+    //}
+    //public void SelectLevel(string nombreNivel1)
+    //{
+        
+    //    SceneManager.LoadScene(nombreNivel1);
+    //}
+    //public void SelectLeve(int numeroNivel1)
+    //{
+    //    SceneManager.LoadScene(numeroNivel1);
+    //}
 }
