@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5045586029052096109}
   - component: {fileID: 8026382149001593811}
   - component: {fileID: 4078397742057258941}
+  - component: {fileID: 8264210890736812565}
   m_Layer: 0
   m_Name: Stone_1
   m_TagString: Coleccionable
@@ -119,9 +120,26 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1.9101312, y: 0.7156128, z: 2.1902804}
   m_Center: {x: 0.22269003, y: 0.3426948, z: -0.33371446}
+--- !u!114 &8264210890736812565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3774595086870836809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e044468f32c87b84691c1a5b22edf69f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidad: 0.2
+  velocidadR: 3
+  timer: 0
+  arriba: {x: 0, y: 3, z: 0}
+  rot: {x: 3, y: 0, z: 0}

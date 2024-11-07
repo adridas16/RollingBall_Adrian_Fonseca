@@ -27,7 +27,10 @@ public class Bola : MonoBehaviour
     [SerializeField] GameObject CanvasMuerte;
     [SerializeField] GameObject AudioM;
     [SerializeField] int DesbloquearNivel;
-
+    [SerializeField] GameObject CanvasFinLevel;
+    [SerializeField] float timer = 120f;
+    [SerializeField] TMP_Text textoTimer;
+    int timerI;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,9 +48,9 @@ public class Bola : MonoBehaviour
         direccion.z= v;
         salto();
         Muerte();
-
+        Timer();
         //transform.Translate(direccion * velocidad * Time.deltaTime, Space.World);
-        
+
     }
     bool DetectarSuelo()
     {
@@ -87,6 +90,12 @@ public class Bola : MonoBehaviour
         {
             virtualCamArriba.SetActive(true);
             virtualCamdetras.SetActive(false);
+        }
+        if (other.gameObject.CompareTag("FinLevel"))
+        {
+            CanvasFinLevel.SetActive(true);
+            AudioM.SetActive(false);
+            rb.constraints = RigidbodyConstraints.FreezeAll;
         }
         
 
@@ -134,6 +143,15 @@ public class Bola : MonoBehaviour
             AudioM.SetActive(false);
             CanvasMuerte.SetActive(true);
             rb.constraints = RigidbodyConstraints.FreezeAll;
+        }
+    }
+    void Timer()
+    {
+        textoTimer.SetText("Timer: " + timer);
+        timer -= Time.deltaTime;
+        if (timer <= 0)
+        {
+            vidas = 0;
         }
     }
 }

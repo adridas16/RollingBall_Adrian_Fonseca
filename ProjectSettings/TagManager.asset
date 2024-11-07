@@ -10,6 +10,8 @@ TagManager:
   - Muerte
   - Pinchos
   - SaltoPared
+  - FinLevel
+  - Parar
   layers:
   - Default
   - TransparentFX

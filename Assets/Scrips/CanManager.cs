@@ -28,17 +28,21 @@ public class CanManager : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
-    //public void botonSelectLevel()
-    //{
-    //    SceneManager.LoadScene(1);
-    //}
+    public void botonSelectLevel()
+    {
+        SceneManager.LoadScene(2);
+    }
     //public void SelectLevel(string nombreNivel1)
     //{
-        
+
     //    SceneManager.LoadScene(nombreNivel1);
     //}
     //public void SelectLeve(int numeroNivel1)
     //{
     //    SceneManager.LoadScene(numeroNivel1);
     //}
+    public void RespawnLeve2()
+    {
+        SceneManager.LoadScene(2);
+    }
 }
