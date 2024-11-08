@@ -143,7 +143,7 @@ public class Bola : MonoBehaviour
         {
             AudioM.SetActive(false);
             CanvasMuerte.SetActive(true);
-            rb.constraints = RigidbodyConstraints.FreezeAll;
+            Destroy(gameObject);
         }
     }
     void Timer()

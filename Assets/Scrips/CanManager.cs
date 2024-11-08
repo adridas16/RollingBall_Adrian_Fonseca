@@ -23,7 +23,7 @@ public class CanManager : MonoBehaviour
     }
     public void Menu()
     {
-       
+        Time.timeScale = 1.0f;
         SceneManager.LoadScene(0);
     }
     public void Respawn()
@@ -41,6 +41,7 @@ public class CanManager : MonoBehaviour
   
     public void RespawnLeve2()
     {
+        Time.timeScale = 1.0f;
         ControladorNiveles.instancia.AumentarNiveles();
         SceneManager.LoadScene(3);
         
