@@ -28,6 +28,7 @@ public class MuroRompible : MonoBehaviour
                 for (int i = 0; i < 35; i++) 
                 {
                     rbs[i].useGravity = true;
+                    iniciarTimer=false;
                 }
 
             }
@@ -43,6 +44,9 @@ public class MuroRompible : MonoBehaviour
            
 
         }
+        
     }
+   
+
 }
     

@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.Properties;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -31,6 +30,7 @@ public class Bola : MonoBehaviour
     [SerializeField] float timer = 120f;
     [SerializeField] TMP_Text textoTimer;
     int timerI;
+    [SerializeField] GameObject CanvasParar;
     // Start is called before the first frame update
     void Start()
     {
@@ -49,6 +49,7 @@ public class Bola : MonoBehaviour
         salto();
         Muerte();
         Timer();
+        parar();
         //transform.Translate(direccion * velocidad * Time.deltaTime, Space.World);
 
     }
@@ -152,6 +153,14 @@ public class Bola : MonoBehaviour
         if (timer <= 0)
         {
             vidas = 0;
+        }
+    }
+    void parar()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Time.timeScale = 0;
+            CanvasParar.SetActive(true);
         }
     }
 }
