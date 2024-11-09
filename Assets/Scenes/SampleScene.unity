@@ -995,7 +995,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stone_1 (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8264210890736812565, guid: b0035cc3b5e6130448e28efdaf06b319, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2099,7 +2100,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stone_1 (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8264210890736812565, guid: b0035cc3b5e6130448e28efdaf06b319, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3207,7 +3209,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Coleccionable
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8264210890736812565, guid: b0035cc3b5e6130448e28efdaf06b319, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3707,18 +3710,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Coleccionable
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8264210890736812565, guid: b0035cc3b5e6130448e28efdaf06b319, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3774595086870836809, guid: b0035cc3b5e6130448e28efdaf06b319,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 978180316}
-    - targetCorrespondingSourceObject: {fileID: 3774595086870836809, guid: b0035cc3b5e6130448e28efdaf06b319,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 978180315}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0035cc3b5e6130448e28efdaf06b319, type: 3}
 --- !u!1001 &598404275
 PrefabInstance:
@@ -6684,56 +6680,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 974491503}
   m_CullTransparentMesh: 1
---- !u!1 &978180313 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3774595086870836809, guid: b0035cc3b5e6130448e28efdaf06b319,
-    type: 3}
-  m_PrefabInstance: {fileID: 588809149}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &978180314 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2565037312225007884, guid: b0035cc3b5e6130448e28efdaf06b319,
     type: 3}
   m_PrefabInstance: {fileID: 588809149}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &978180315
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 978180313}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.9101312, y: 0.7156128, z: 2.1902804}
-  m_Center: {x: 0.22269003, y: 0.3426948, z: -0.33371446}
---- !u!114 &978180316
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 978180313}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e044468f32c87b84691c1a5b22edf69f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocidad: 0.2
-  velocidadR: 3
-  timer: 0
-  arriba: {x: 0, y: 3, z: 0}
-  rot: {x: 3, y: 0, z: 0}
 --- !u!1001 &992049348
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7321,7 +7273,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 39c3caef3a1bd834ab73f6b915e7fa5d, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -7417,7 +7369,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 27b873cd8b5e98049af8d7026792a292, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.7
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -9305,7 +9257,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Coleccionable
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8264210890736812565, guid: b0035cc3b5e6130448e28efdaf06b319, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -14204,7 +14157,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stone_1 (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8264210890736812565, guid: b0035cc3b5e6130448e28efdaf06b319, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
