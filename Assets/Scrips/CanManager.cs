@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class CanManager : MonoBehaviour
 {
     [SerializeField] GameObject CanvasParar;
+    
     private void Start()
     {
         
@@ -50,5 +51,6 @@ public class CanManager : MonoBehaviour
     {
         Time.timeScale = 1.0f;
         CanvasParar.SetActive(false);
+        
     }
 }

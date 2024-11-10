@@ -31,6 +31,7 @@ public class Bola : MonoBehaviour
     [SerializeField] TMP_Text textoTimer;
     int timerI;
     [SerializeField] GameObject CanvasParar;
+    bool NoSaltarParado=true;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,12 +52,13 @@ public class Bola : MonoBehaviour
         Timer();
         parar();
         //transform.Translate(direccion * velocidad * Time.deltaTime, Space.World);
-
+        
     }
     bool DetectarSuelo()
     {
         bool Detector = Physics.Raycast(transform.position, new Vector3(0, -1, 0), DeteccionSuelo, queEsSuelo);
         return Detector;
+
     }
     private void FixedUpdate()
     {
@@ -71,8 +73,11 @@ public class Bola : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space)&& DetectarSuelo() == true)
         {
+            if (Time.timeScale >= 0.25)
+            {
+                rb.AddForce(new Vector3(0, 1, 0).normalized * FuerzaSalto, ForceMode.Impulse);
+            }
             
-            rb.AddForce(new Vector3(0, 1, 0).normalized * FuerzaSalto, ForceMode.Impulse);  
             
         }
     }
@@ -161,6 +166,8 @@ public class Bola : MonoBehaviour
         {
             Time.timeScale = 0;
             CanvasParar.SetActive(true);
+            NoSaltarParado=false;
+
         }
     }
 }
